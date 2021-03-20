@@ -1,6 +1,6 @@
 {
   "name": "twitch-orbit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Twitch integration for Orbit.love",
   "main": "index.js",
   "scripts": {
