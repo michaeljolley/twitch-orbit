@@ -23,7 +23,7 @@ jobs:
           branch: 'main'
 
       - name: Build Docker images
-        run: docker build . michaeljolley/twitch-orbit:${{ steps.bump.outputs.version }} --tag michaeljolley/twitch-orbit:latest
+        run: docker build --tag michaeljolley/twitch-orbit:${{ steps.bump.outputs.version }} --tag michaeljolley/twitch-orbit:latest .
 
       - name: Login to Docker Hub
         if: success()
