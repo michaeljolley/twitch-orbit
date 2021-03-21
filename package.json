@@ -27,7 +27,7 @@
   "homepage": "https://github.com/MichaelJolley/twitch-orbit#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "comfy.js": "^1.1.6",
+    "comfy.js": "^1.1.9",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
