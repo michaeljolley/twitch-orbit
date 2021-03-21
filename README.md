@@ -57,15 +57,15 @@ use cases.
 
 | Variable | Required | Default | Description |
 | --- | --- | --- | --- |
-| TWITCH_CHANNELS | [x] | | A comma separated list of Twitch channels to listen to |
-| ORBIT_WS | [x] | | The Orbit workspace id |
-| ORBIT_KEY | [x] | | The Orbit API key |
-| ORBIT_WEIGHT_FOLLOW     | [ ] | 1 | Weight to apply for user follows |
-| ORBIT_WEIGHT_CHEER      | [ ] | 1 | Weight to apply for cheers |
-| ORBIT_WEIGHT_SUB        | [ ] | 1 | Weight to apply for all subscription events |
-| ORBIT_WEIGHT_RAID       | [ ] | 1 | Weight to apply for raids |
-| ORBIT_WEIGHT_CHAT       | [ ] | 1 | Weight to apply for chatting per day |
-| ORBIT_WEIGHT_COMMAND    | [ ] | 1 | Weight to apply for using a command |
+| TWITCH_CHANNELS | X | | A comma separated list of Twitch channels to listen to |
+| ORBIT_WS | X | | The Orbit workspace id |
+| ORBIT_KEY | X | | The Orbit API key |
+| ORBIT_WEIGHT_FOLLOW     | | 1 | Weight to apply for user follows |
+| ORBIT_WEIGHT_CHEER      | | 1 | Weight to apply for cheers |
+| ORBIT_WEIGHT_SUB        | | 1 | Weight to apply for all subscription events |
+| ORBIT_WEIGHT_RAID       | | 1 | Weight to apply for raids |
+| ORBIT_WEIGHT_CHAT       | | 1 | Weight to apply for chatting per day |
+| ORBIT_WEIGHT_COMMAND    | | 1 | Weight to apply for using a command |
 
 ## Code of Conduct
 
