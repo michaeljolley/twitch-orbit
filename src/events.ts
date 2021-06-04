@@ -21,22 +21,12 @@ interface WeightConfig {
   weightSub?: number;
 }
 
-const defaultWeights: WeightConfig = {
-  weightChat: 1,
-  weightCheer: 1,
-  weightCommand: 1,
-  weightFollow: 1,
-  weightGiftSub: 1,
-  weightRaid: 1,
-  weightSub: 1
-};
-
 export abstract class Handlers {
 
   private static weights: WeightConfig;
 
   static init(config: WeightConfig): void {
-    this.weights = { ...defaultWeights, ...config };
+    this.weights = config;
   }
 
   static async onCommand(user: string, command: string, message: string, flags: OnMessageFlags, extra: OnCommandExtra): Promise<void> {
