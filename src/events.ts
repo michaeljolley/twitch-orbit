@@ -29,6 +29,15 @@ export abstract class Handlers {
     this.weights = config;
   }
 
+  static createIdentity(channel:string, username: string): Identity {
+    return  new Identity(
+      'twitch',
+      `twitch.tv/${channel}`,
+      username,
+      `https://twitch.tv/${username}`
+    );
+  }
+
   static async onCommand(user: string, command: string, message: string, flags: OnMessageFlags, extra: OnCommandExtra): Promise<void> {
     if (user === extra.channel) return;
 
@@ -37,24 +46,13 @@ export abstract class Handlers {
     const activity = new Activity(
       'Command on Twitch',
       `Used command ${command} on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightCommand?.toFixed(2),
       'twitch:command',
       `twitch-command-${user}-${command}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      user,
-      undefined,
-      undefined,
-      `https://twitch.tv/${user}`
-    );
+    const identity = this.createIdentity(extra.channel, user);
 
     await Orbit.addActivity(
       activity,
@@ -70,24 +68,13 @@ export abstract class Handlers {
     const activity = new Activity(
       'Chat on Twitch',
       `Chatted on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightChat?.toFixed(2),
       'twitch:chat',
       `twitch-chat-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      user,
-      undefined,
-      undefined,
-      `https://twitch.tv/${user}`
-    );
+    const identity = this.createIdentity(extra.channel, user);
 
     await Orbit.addActivity(
       activity,
@@ -101,24 +88,13 @@ export abstract class Handlers {
     const activity = new Activity(
       'Cheer on Twitch',
       `Cheered ${bits} on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightCheer?.toFixed(2),
       'twitch:cheer',
       `twitch-cheer-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      user,
-      undefined,
-      undefined,
-      `https://twitch.tv/${user}`
-    );
+    const identity = this.createIdentity(extra.channel, user);
 
     await Orbit.addActivity(
       activity,
@@ -132,24 +108,13 @@ export abstract class Handlers {
     const activity = new Activity(
       'Raid on Twitch',
       `Raided with ${viewers} viewers on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightRaid?.toFixed(2),
       'twitch:raid',
       `twitch-raid-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      user,
-      undefined,
-      undefined,
-      `https://twitch.tv/${user}`
-    );
+    const identity = this.createIdentity(extra.channel, user);
 
     await Orbit.addActivity(
       activity,
@@ -163,24 +128,13 @@ export abstract class Handlers {
     const activity = new Activity(
       'Sub on Twitch',
       `Resub for ${cumulativeMonths} months on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightSub?.toFixed(2),
       'twitch:sub',
       `twitch-sub-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      user,
-      undefined,
-      undefined,
-      `https://twitch.tv/${user}`
-    );
+    const identity = this.createIdentity(extra.channel, user);
 
     await Orbit.addActivity(
       activity,
@@ -194,24 +148,13 @@ export abstract class Handlers {
     const activity = new Activity(
       'Sub on Twitch',
       `Sub on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightSub?.toFixed(2),
       'twitch:sub',
       `twitch-sub-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      user,
-      undefined,
-      undefined,
-      `https://twitch.tv/${user}`
-    );
+    const identity = this.createIdentity(extra.channel, user);
 
     await Orbit.addActivity(
       activity,
@@ -225,46 +168,24 @@ export abstract class Handlers {
     const activity = new Activity(
       'Sub on Twitch',
       `Sub on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightSub?.toFixed(2),
       'twitch:sub',
       `twitch-sub-${recipientUser}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const identity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      recipientUser,
-      undefined,
-      undefined,
-      `https://twitch.tv/${recipientUser}`
-    );
+    const identity = this.createIdentity(extra.channel, recipientUser);
 
     const gifterActivity = new Activity(
       'Gifted sub on Twitch',
       `Gifted sub to ${recipientUser} on Twitch`,
-      undefined,
-      undefined,
       this.weights.weightGiftSub?.toFixed(2),
       'twitch:sub:gift',
       `twitch-sub-gift-${recipientUser}-${gifterUser}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
-      date.toISOString(),
-      undefined
+      date.toISOString()
     );
 
-    const gifterIdentity = new Identity(
-      'twitch',
-      undefined,
-      `https://twitch.tv/${extra.channel}`,
-      gifterUser,
-      undefined,
-      undefined,
-      `https://twitch.tv/${gifterUser}`
-    );
+    const gifterIdentity = this.createIdentity(extra.channel, gifterUser);
 
     await Orbit.addActivity(
       activity,
