@@ -4,5 +4,8 @@ services:
     env: docker
     envVars:
       - key: ORBIT_WS
+        value:
       - key: ORBIT_KEY
+        value:
       - key: TWITCH_CHANNELS
+        value:
