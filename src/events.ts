@@ -1,5 +1,5 @@
 import {
-  OnCheerExtra, 
+  OnCheerExtra,
   OnCheerFlags,
   OnCommandExtra,
   OnMessageExtra,
@@ -67,7 +67,7 @@ export abstract class Handlers {
 
     const activity = new Activity(
       'Chat on Twitch',
-      `Chatted on Twitch`,
+      'Chatted on Twitch',
       this.weights.weightChat?.toFixed(2),
       'twitch:chat',
       `twitch-chat-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,

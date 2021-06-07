@@ -15,13 +15,19 @@ The application listens for the following events to record:
 
 | Event | Description |
 | --- | --- |
-| Chat Message | Viewer sends a message in Twitch chat |
+| Chat Message | Viewer sends their first message in Twitch chat today |
 | Command | Viewer has entered a command (`!command`) in Twitch chat |
 | Cheer | Viewer has cheered X bits |
 | Raid | Streamer has raided the channel with X viewers |
 | Subscribe | Viewer has subscribed to the Twitch channel |
 | Resubscribe | Viewer has renewed their subscription |
 | Gift Subscription | Viewer has received or given a gift subscription |
+
+## Quick Deploy
+
+<a href="https://render.com/deploy?repo=https://github.com/phazonoverload/twitch-orbit">
+  <img src="https://render.com/images/deploy-to-render-button.svg">
+</a>
 
 ## Setup
 

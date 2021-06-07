@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: orbit-twitch
+    env: docker
+    envVars:
+      - key: ORBIT_WS
+        sync: false
+      - key: ORBIT_KEY
+        sync: false
+      - key: TWITCH_CHANNELS
+        sync: false
