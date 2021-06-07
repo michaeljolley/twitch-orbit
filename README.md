@@ -23,6 +23,10 @@ The application listens for the following events to record:
 | Resubscribe | Viewer has renewed their subscription |
 | Gift Subscription | Viewer has received or given a gift subscription |
 
+## Quick Deploy
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
 ## Setup
 
 Rename `.env-sample` to `.env` and provide the correct values for each variable.

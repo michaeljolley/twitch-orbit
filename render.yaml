@@ -1,0 +1,8 @@
+services:
+  - type: worker
+    name: orbit-twitch
+    env: docker
+    envVars:
+      - key: ORBIT_WS
+      - key: ORBIT_KEY
+      - key: TWITCH_CHANNELS
