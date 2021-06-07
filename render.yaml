@@ -4,8 +4,8 @@ services:
     env: docker
     envVars:
       - key: ORBIT_WS
-        generateValue: true
+        sync: false
       - key: ORBIT_KEY
-        generateValue: true
+        sync: false
       - key: TWITCH_CHANNELS
-        generateValue: true
+        sync: false
