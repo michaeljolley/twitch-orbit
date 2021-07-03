@@ -31,6 +31,7 @@ export class Activity {
     public description?: string,
     public weight?: string,
     public activity_type?: string,
+    public tags?: Array<string>,
     public key?: string,
     public occurred_at?: string
   ) {}

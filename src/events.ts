@@ -48,6 +48,7 @@ export abstract class Handlers {
       `Used command ${command} on Twitch`,
       this.weights.weightCommand?.toFixed(2),
       'twitch:command',
+      ['channel:twitch'],
       `twitch-command-${user}-${command}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -66,10 +67,11 @@ export abstract class Handlers {
     const date = new Date();
 
     const activity = new Activity(
-      'Chat on Twitch',
-      'Chatted on Twitch',
+      'Participated in Twitch Chat',
+      message,
       this.weights.weightChat?.toFixed(2),
       'twitch:chat',
+      ['channel:twitch'],
       `twitch-chat-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -90,6 +92,7 @@ export abstract class Handlers {
       `Cheered ${bits} on Twitch`,
       this.weights.weightCheer?.toFixed(2),
       'twitch:cheer',
+      ['channel:twitch'],
       `twitch-cheer-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -110,6 +113,7 @@ export abstract class Handlers {
       `Raided with ${viewers} viewers on Twitch`,
       this.weights.weightRaid?.toFixed(2),
       'twitch:raid',
+      ['channel:twitch'],
       `twitch-raid-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -130,6 +134,7 @@ export abstract class Handlers {
       `Resub for ${cumulativeMonths} months on Twitch`,
       this.weights.weightSub?.toFixed(2),
       'twitch:sub',
+      ['channel:twitch'],
       `twitch-sub-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -150,6 +155,7 @@ export abstract class Handlers {
       `Sub on Twitch`,
       this.weights.weightSub?.toFixed(2),
       'twitch:sub',
+      ['channel:twitch'],
       `twitch-sub-${user}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -170,6 +176,7 @@ export abstract class Handlers {
       `Sub on Twitch`,
       this.weights.weightSub?.toFixed(2),
       'twitch:sub',
+      ['channel:twitch'],
       `twitch-sub-${recipientUser}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
@@ -181,6 +188,7 @@ export abstract class Handlers {
       `Gifted sub to ${recipientUser} on Twitch`,
       this.weights.weightGiftSub?.toFixed(2),
       'twitch:sub:gift',
+      ['channel:twitch'],
       `twitch-sub-gift-${recipientUser}-${gifterUser}-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
       date.toISOString()
     );
